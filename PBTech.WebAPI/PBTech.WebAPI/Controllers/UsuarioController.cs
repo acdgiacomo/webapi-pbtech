@@ -20,7 +20,7 @@ namespace PBTech.WebAPI.Controllers
         [Route("{nome}/{email}")]
         public async Task<IActionResult> Consultar([FromRoute] string nome, string email) 
         {
-            var usuarioDB = _contexto.Usuarios.FirstOrDefault(u => u.Nome == nome && u.Email == email);
+            var usuarioDB = await _contexto.Usuarios.FirstOrDefaultAsync(u => u.Nome == nome && u.Email == email);
 
             if (usuarioDB != null)
                 return Ok(usuarioDB);
