@@ -69,16 +69,21 @@ namespace PBTech.WebAPI.Controllers
         [HttpPut]
         [Route("atualizar/{email}")]
         public async Task<ActionResult> Atualizar(string email, [FromBody] Usuario usuario) {
-            var usuarioDB = await _contexto.Usuarios.FirstOrDefaultAsync(u => u.Email == email);
+            var usuarioDB = await _contexto.Usuarios.FirstOrDefaultAsync(u => u.Email == usuario.Email);
 
             if (usuarioDB != null)
+                return BadRequest();
+
+            var usuarioAtt = await _contexto.Usuarios.FirstOrDefaultAsync(u => u.Email == email);
+
+            if (usuarioAtt != null)
             {
-                usuarioDB.Nome = usuario.Nome;
-                usuarioDB.Email = usuario.Email;
+                usuarioAtt.Nome = usuario.Nome;
+                usuarioAtt.Email = usuario.Email;
             
                 await _contexto.SaveChangesAsync();
 
-                return Ok(usuarioDB);
+                return Ok(usuarioAtt);
                 
             }
 

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "wLhWtkyUIrfTFSmQGBAwLNvrvAQTgKYzlWjswZ7OcI6vWiC5uHLaiKDv6Hd+QDlcSFVsILItocHjw0CDb4E0pA==",
+  "dgSpecHash": "NjOmBF4xWSdVYRP9pQKMuVEr2hcl17tauiTych244a7QdkIQpquV9BkZ9UZp8vZkuYPdvdZMTGfKIBnUwb0KuA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\accdg\\Desktop\\Bootcamps\\Bootcamp-PBTech\\Case\\webapi-pbtech\\PBTECH.WebAPI\\PBTech.WebAPI\\PBTech.WebAPI.csproj",
+  "projectFilePath": "C:\\Users\\accdg\\Desktop\\Bootcamps\\Bootcamp-PBTech\\Case\\webapi-pbtech-teste\\webapi-pbtech\\PBTech.WebAPI\\PBTech.WebAPI\\PBTech.WebAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\accdg\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\accdg\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",

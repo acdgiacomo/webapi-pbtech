@@ -6456,11 +6456,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\accdg\\Desktop\\Bootcamps\\Bootcamp-PBTech\\Case\\webapi-pbtech\\PBTECH.WebAPI\\PBTech.WebAPI\\PBTech.WebAPI.csproj",
+      "projectUniqueName": "C:\\Users\\accdg\\Desktop\\Bootcamps\\Bootcamp-PBTech\\Case\\webapi-pbtech-teste\\webapi-pbtech\\PBTech.WebAPI\\PBTech.WebAPI\\PBTech.WebAPI.csproj",
       "projectName": "PBTech.WebAPI",
-      "projectPath": "C:\\Users\\accdg\\Desktop\\Bootcamps\\Bootcamp-PBTech\\Case\\webapi-pbtech\\PBTECH.WebAPI\\PBTech.WebAPI\\PBTech.WebAPI.csproj",
+      "projectPath": "C:\\Users\\accdg\\Desktop\\Bootcamps\\Bootcamp-PBTech\\Case\\webapi-pbtech-teste\\webapi-pbtech\\PBTech.WebAPI\\PBTech.WebAPI\\PBTech.WebAPI.csproj",
       "packagesPath": "C:\\Users\\accdg\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\accdg\\Desktop\\Bootcamps\\Bootcamp-PBTech\\Case\\webapi-pbtech\\PBTECH.WebAPI\\PBTech.WebAPI\\obj\\",
+      "outputPath": "C:\\Users\\accdg\\Desktop\\Bootcamps\\Bootcamp-PBTech\\Case\\webapi-pbtech-teste\\webapi-pbtech\\PBTech.WebAPI\\PBTech.WebAPI\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
