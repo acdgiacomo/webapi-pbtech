@@ -15,10 +15,6 @@ namespace PBTech.WebAPI.Data
         {
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(UsuarioContext).Assembly);
             base.OnModelCreating(modelBuilder);
-
-            modelBuilder.Entity<Usuario>()
-                .HasAlternateKey(u => u.Email)
-                .HasName("AlternateKey_Email");
         }
     }
 }

@@ -6,7 +6,7 @@ using PBTech.WebAPI.Models;
 namespace PBTech.WebAPI.Controllers
 {
     [ApiController]
-    [Route("usuario")]
+    [Route("api/[controller]")]
     public class UsuarioController : ControllerBase
     {
         private readonly UsuarioContext _contexto;
@@ -17,7 +17,14 @@ namespace PBTech.WebAPI.Controllers
         }
 
         [HttpGet]
-        [Route("{nome}/{email}")]
+        public async Task<IActionResult> ConsultarTodos() {
+            List<Usuario> usuarios = await _contexto.Usuarios.ToListAsync();
+
+            return Ok(usuarios);   
+        }
+
+        [HttpGet]
+        [Route("consultar/{nome}/{email}")]
         public async Task<IActionResult> Consultar([FromRoute] string nome, string email) 
         {
             var usuarioDB = await _contexto.Usuarios.FirstOrDefaultAsync(u => u.Nome == nome && u.Email == email);
@@ -30,8 +37,9 @@ namespace PBTech.WebAPI.Controllers
 
         
         [HttpPost]
+        [Route("incluir")]
         public async Task<IActionResult> Cadastrar([FromBody] Usuario usuario) {
-            var usuarioDB = _contexto.Usuarios.FirstOrDefault(u => u.Email == usuario.Email);
+            var usuarioDB = await _contexto.Usuarios.FirstOrDefaultAsync(u => u.Email == usuario.Email);
 
             if (usuarioDB != null)
                 return BadRequest();
@@ -44,9 +52,9 @@ namespace PBTech.WebAPI.Controllers
 
         
         [HttpDelete]
-        [Route("{email}")]
+        [Route("excluir/{email}")]
         public async Task<IActionResult> Excluir(string email) {
-            var usuarioDB = _contexto.Usuarios.FirstOrDefault(u => u.Email == email);
+            var usuarioDB = await _contexto.Usuarios.FirstOrDefaultAsync(u => u.Email == email);
 
             if (usuarioDB != null) { 
                 _contexto.Usuarios.Remove(usuarioDB);
@@ -59,15 +67,19 @@ namespace PBTech.WebAPI.Controllers
 
         
         [HttpPut]
+        [Route("atualizar/{email}")]
         public async Task<ActionResult> Atualizar(string email, [FromBody] Usuario usuario) {
-            var usuarioDB = _contexto.Usuarios.FirstOrDefault(u => u.Email == email);
+            var usuarioDB = await _contexto.Usuarios.FirstOrDefaultAsync(u => u.Email == email);
 
             if (usuarioDB != null)
             {
-                _contexto.Entry(usuario).State = EntityState.Modified;
+                usuarioDB.Nome = usuario.Nome;
+                usuarioDB.Email = usuario.Email;
+            
                 await _contexto.SaveChangesAsync();
 
-                return Ok();
+                return Ok(usuarioDB);
+                
             }
 
             return NotFound();
